@@ -10,6 +10,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import { CssBaseline } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   root: {
@@ -28,7 +29,7 @@ const Post = (props) => {
             <CssBaseline />
             <Container>
             <Box mb = {2}>
-            <Card className={classes.root} component="div" style={{ backgroundColor: '#cfe8fc', height: '70vh' }}>
+            <Card className={classes.root} component="div" style={{ backgroundColor: 'lightgrey', height: '70vh' }}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -46,9 +47,11 @@ const Post = (props) => {
       </CardActionArea>
       <CardActions>
         
+        <Link to={`/PostDetail/${id}`}>
         <Button size="small" color="primary" variant="contained">
           See More
         </Button>
+        </Link>
       </CardActions>
     </Card>
             </Box>

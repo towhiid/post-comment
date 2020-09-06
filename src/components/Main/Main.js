@@ -4,7 +4,7 @@ import Post from '../Post/Post';
 const Main = () => {
    const [posts, setPosts] =  useState([]);
 
-   let postUrl = 'https://jsonplaceholder.typicode.com/posts';
+   const postUrl = 'https://jsonplaceholder.typicode.com/posts';
    useEffect (() => {
     fetch (postUrl)
     .then (res => res.json())
@@ -15,7 +15,7 @@ const Main = () => {
         <div>
         
             {
-                posts.map(post => <Post post ={post}></Post>)
+                posts.map(post => <Post post ={post} key ={post.id}></Post>)
             }
         </div>
 
